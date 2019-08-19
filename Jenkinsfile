@@ -7,9 +7,12 @@ pipeline {
            }
        }
        
-       stage('Test') {
+       stage('test') {
           steps {
-              echo '2+2'
+              withMaven(maven : 'maven_3.5.3') {
+                                    bat 'mvn test'
+                                }
+
           }
        }
        
