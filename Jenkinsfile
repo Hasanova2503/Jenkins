@@ -4,6 +4,10 @@ pipeline {
        stage('Build') {
            steps {
               echo 'This is a minimal pipeline.'
+              withMaven(maven : 'maven_3.5.3') {
+                                    sh 'mvn clean compile'
+                                }
+
            }
        }
        
