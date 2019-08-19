@@ -1,32 +1,10 @@
 pipeline {
-    agent any
-    
-    stages {
-        stage('Example Build') {
+   agent any
+   stages {
+       stage('Build') {
            steps {
-               withMaven(maven : '3.6.1') {
-                                     sh 'mvn clean compile'
-                                 }
-
+              echo 'This is a minimal pipeline.'
            }
-        }
-        
-        stage('Testing') {
-           steps {
-               withMaven(maven : '3.6.1') {
-                                     sh 'mvn test'
-                                 }
-
-           }
-        }
-        
-        stage('Deploy') {
-           steps {
-               withMaven(maven : '3.6.1') {
-                                     sh 'mvn deploy'
-                                 }
-
-           }
-        }
-    }
+       }
+   }
 }
